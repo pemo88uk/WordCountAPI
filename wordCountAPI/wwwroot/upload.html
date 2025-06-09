@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Frequency Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8fc;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .title {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: #004080;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        .upload-button {
+            padding: 12px 24px;
+            background: #004080;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #resultContainer {
+            margin-top: 30px;
+            max-height: 60vh;
+            overflow-y: auto;
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        th {
+            background-color: #004080;
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+
+        tr:hover {
+            background-color: #f1f5fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Word Frequency Counter</div>
+    <button class="upload-button" onclick="document.getElementById('fileInput').click();">Select a .txt File</button>
+    <input type="file" id="fileInput" accept=".txt" onchange="uploadFile()" />
+
+    <div id="resultContainer" style="display: none;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Word</th>
+                    <th>Count</th>
+                </tr>
+            </thead>
+            <tbody id="resultBody"></tbody>
+        </table>
+    </div>
+
+    <script>
+        async function uploadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const resultContainer = document.getElementById('resultContainer');
+            const resultBody = document.getElementById('resultBody');
+            const file = fileInput.files[0];
+
+            if (!file) return;
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const response = await fetch('/api/wordcount', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error(await response.text());
+                }
+
+                const data = await response.json();
+                resultBody.innerHTML = "";
+
+                data.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `<td>${item.key}</td><td>${item.value}</td>`;
+                    resultBody.appendChild(row);
+                });
+
+                resultContainer.style.display = 'block';
+            } catch (err) {
+                alert('Error: ' + err.message);
+            }
+        }
+    </script>
+</body>
+</html>

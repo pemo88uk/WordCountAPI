@@ -1,0 +1,76 @@
+﻿body {
+}
+/* Background and layout */
+.swagger-ui,
+.swagger-ui .wrapper {
+    background-color: #f5faff; /* very light blue background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+    /* Sidebar and top bar */
+    .swagger-ui .topbar {
+        background-color: #002f6c; /* dark blue - Danske Bank style */
+        padding: 10px;
+    }
+
+        .swagger-ui .topbar .topbar-wrapper {
+            color: #ffffff;
+        }
+
+            /* Title text */
+            .swagger-ui .topbar .topbar-wrapper .link span {
+                color: #ffffff;
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+    /* Endpoint sections */
+    .swagger-ui .opblock {
+        border: 1px solid #dce7f3;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        background-color: #ffffff;
+    }
+
+        /* Method tags (GET, POST, etc.) */
+        .swagger-ui .opblock .opblock-summary-method {
+            color: white;
+            font-weight: bold;
+        }
+
+        .swagger-ui .opblock.opblock-post .opblock-summary-method {
+            background-color: #0056b3; /* soft Danske blue for POST */
+        }
+
+        .swagger-ui .opblock .opblock-summary {
+            border-radius: 10px;
+        }
+
+    /* Buttons */
+    .swagger-ui .btn {
+        background-color: #002f6c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+
+        .swagger-ui .btn:hover {
+            background-color: #004a99;
+        }
+
+    /* Input fields and response */
+    .swagger-ui input,
+    .swagger-ui textarea,
+    .swagger-ui select {
+        border-radius: 4px;
+        border: 1px solid #cccccc;
+    }
+
+    .swagger-ui .response-col_status {
+        font-weight: bold;
+        color: #0056b3;
+    }
+
+    .swagger-ui .response-col_description {
+        color: #333;
+    }

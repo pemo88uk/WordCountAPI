@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "0aV58v5g6JbZYnFJTOmQa3gFQGwEOLCWqF8yJI6peTE=",
+  "Source": "wordCountAPI",
+  "BasePath": "_content/wordCountAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "wordCountAPI\\wwwroot",
+      "Source": "wordCountAPI",
+      "ContentRoot": "C:\\Users\\piemu\\source\\repos\\wordCountAPI\\wordCountAPI\\wwwroot\\",
+      "BasePath": "_content/wordCountAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\piemu\\source\\repos\\wordCountAPI\\wordCountAPI\\wwwroot\\swagger-ui\\custom.css",
+      "SourceId": "wordCountAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\piemu\\source\\repos\\wordCountAPI\\wordCountAPI\\wwwroot\\",
+      "BasePath": "_content/wordCountAPI",
+      "RelativePath": "swagger-ui/custom.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\swagger-ui\\custom.css"
+    },
+    {
+      "Identity": "C:\\Users\\piemu\\source\\repos\\wordCountAPI\\wordCountAPI\\wwwroot\\upload.html",
+      "SourceId": "wordCountAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\piemu\\source\\repos\\wordCountAPI\\wordCountAPI\\wwwroot\\",
+      "BasePath": "_content/wordCountAPI",
+      "RelativePath": "upload.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload.html"
+    }
+  ]
+}
