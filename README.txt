@@ -21,7 +21,7 @@ Features
 Live Demo
 ------------------------------------------------------------
 
-Frontend UI: https://wordcountapi.onrender.com/upload.html 
+Frontend UI: https://wordcountapi.onrender.com
 GitHub Repo: https://github.com/pemo88uk/WordCountAPI
 
 ------------------------------------------------------------
