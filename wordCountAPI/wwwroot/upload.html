@@ -88,11 +88,15 @@
         </table>
     </div>
 
+    <!-- Download CSV Button -->
+    <button id="downloadBtn" class="upload-button" style="margin-top: 20px; display: none;" onclick="downloadCSV()">Download as CSV</button>
+
     <script>
         async function uploadFile() {
             const fileInput = document.getElementById('fileInput');
             const resultContainer = document.getElementById('resultContainer');
             const resultBody = document.getElementById('resultBody');
+            const downloadBtn = document.getElementById('downloadBtn');
             const file = fileInput.files[0];
 
             if (!file) return;
@@ -115,14 +119,35 @@
 
                 data.forEach(item => {
                     const row = document.createElement('tr');
-                    row.innerHTML = `<td>${item.key}</td><td>${item.value}</td>`;
+                    row.innerHTML = `<td>${item.word}</td><td>${item.count}</td>`;
                     resultBody.appendChild(row);
                 });
 
+                // Store data for download
+                window.currentWordData = data;
+
                 resultContainer.style.display = 'block';
+                downloadBtn.style.display = 'inline-block';
             } catch (err) {
                 alert('Error: ' + err.message);
             }
+        }
+
+        function downloadCSV() {
+            if (!window.currentWordData || window.currentWordData.length === 0) return;
+
+            let csvContent = "data:text/csv;charset=utf-8,Word,Count\n";
+            window.currentWordData.forEach(item => {
+                csvContent += `${item.word},${item.count}\n`;
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "wordcount.csv");
+            document.body.appendChild(link); // Firefox fix
+            link.click();
+            document.body.removeChild(link);
         }
     </script>
 </body>

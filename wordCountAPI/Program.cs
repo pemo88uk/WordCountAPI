@@ -1,7 +1,11 @@
+using wordCountAPI.Services;
+using wordCountAPI.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
 builder.Services.AddControllers();
+builder.Services.AddScoped<IWordCounter, WordCounter>();
 builder.Services.AddEndpointsApiExplorer();
 
 // Configure Swagger
@@ -45,4 +49,5 @@ app.UseDefaultFiles(new DefaultFilesOptions
 app.UseStaticFiles();
 app.UseAuthorization();
 app.MapControllers();
+app.Urls.Add("http://*:80");
 app.Run();
