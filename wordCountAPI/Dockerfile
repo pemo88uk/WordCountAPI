@@ -3,11 +3,11 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /app
 
 # Copy csproj and restore as distinct layers
-COPY wordCountAPI.csproj ./
+COPY wordCountAPI/wordCountAPI.csproj ./
 RUN dotnet restore wordCountAPI.csproj
 
 # Copy the remaining source code
-COPY . ./
+COPY wordCountAPI/. ./
 RUN dotnet publish -c Release -o out
 
 # Use .NET 7 ASP.NET runtime image
