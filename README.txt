@@ -65,9 +65,9 @@ This line is used for Docker or hosting environments and can cause conflicts whe
 Option 1: Run with .NET CLI
 
 1. Open a terminal or command prompt.
-2. Navigate to the project folder where the .csproj file is located. For example:
+2. Navigate to the project folder where the wordCountAPI.csproj file is located:
 
-    cd path\to\your\wordCountAPI
+    cd path\to\your\wordCountAPI\wordCountAPI
 
 3. Run the application:
 
@@ -75,15 +75,22 @@ Option 1: Run with .NET CLI
 
 Then open in browser:
 
-- Swagger UI: https://localhost:7242/swagger
-- Frontend UI: https://localhost:7242
+- https://localhost:7242/upload.html
 
 Option 2: Run with Docker
 
-    docker build -t wordcount-api .
+1. Open a terminal or command prompt.
+
+2. Navigate to the project root folder (the one containing foler 'wordCountAPI' and 'README.txt'):
+
+    cd path\to\your\wordCountAPI
+
+3. Build and run the Docker container using the following commands:
+
+    docker build -t wordcount-api -f wordCountAPI\Dockerfile .
     docker run -d -p 8080:80 wordcount-api
 
-Then open in browser:
+4. Then open in browser:
 
 - http://localhost:8080/upload.html
 
@@ -154,8 +161,8 @@ If deployed, access the live version here:
 ------------------------------------------------------------
 Author
 
-Lukas Morkunas  
-GitHub: https://github.com/pemo88uk 
+Lukas Morkunas
+GitHub: https://github.com/pemo88uk
 Email: lukasmork3@gmail.com
 
 ------------------------------------------------------------
