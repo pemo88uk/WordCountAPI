@@ -81,7 +81,7 @@ Option 2: Run with Docker
 
 1. Open a terminal or command prompt.
 
-2. Navigate to the project root folder (the one containing foler 'wordCountAPI' and 'README.txt'):
+2. Navigate to the project root folder (the one containing folder 'wordCountAPI' and file 'README.txt'):
 
     cd path\to\your\wordCountAPI
 
@@ -131,9 +131,18 @@ Test cases include:
 - Empty input
 - Multiple variations using [Theory] and [InlineData]
 
-To run tests:
+To run the tests locally:
+
+1. Open a terminal or command prompt.
+2. Navigate to the test project folder 'wordCountAPI.Tests':
+
+    cd path\to\your\wordCountAPI\wordCountAPI.Tests
+
+3. Run the tests with:
 
     dotnet test
+
+The test results will be displayed in the terminal.
 
 ------------------------------------------------------------
 Extensibility
@@ -154,7 +163,7 @@ Deployment
 
 This project is containerized with Docker and deployable on platforms like Render.com.
 
-If deployed, access the live version here:
+Access the live version here:
 
     https://wordcountapi.onrender.com
 
