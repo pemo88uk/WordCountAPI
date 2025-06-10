@@ -55,14 +55,28 @@ Prerequisites:
 - (Optional) Visual Studio 2022 or newer
 - Docker (for container-based option)
 
+Important:
+If running locally, comment out or remove the following line in Program.cs:
+
+    app.Urls.Add("http://*:80");
+
+This line is used for Docker or hosting environments and can cause conflicts when running locally.
+
 Option 1: Run with .NET CLI
 
-    dotnet run --project wordCountAPI
+1. Open a terminal or command prompt.
+2. Navigate to the project folder where the .csproj file is located. For example:
+
+    cd path\to\your\wordCountAPI
+
+3. Run the application:
+
+    dotnet run
 
 Then open in browser:
 
 - Swagger UI: https://localhost:7242/swagger
-- Frontend UI: https://localhost:7242/upload.html
+- Frontend UI: https://localhost:7242
 
 Option 2: Run with Docker
 
@@ -142,7 +156,7 @@ Author
 
 Lukas Morkunas  
 GitHub: https://github.com/pemo88uk 
-Email: lukasmork3@gmail.com  
+Email: lukasmork3@gmail.com
 
 ------------------------------------------------------------
 Summary
